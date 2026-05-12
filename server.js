@@ -74,7 +74,9 @@ const authLimiter = rateLimit({
 
 app.use("/api", apiLimiter);
 app.use("/uploads", express.static(uploadsDir));
-app.use(express.static(process.cwd()));
+// Serve static files from the project directory where this file lives.
+// Using __dirname makes serving robust if PM2 changes the working directory.
+app.use(express.static(path.join(__dirname)));
 
 app.get("/api/health", (_req, res) => {
   res.json({ ok: true, service: "portfolio-api", db: "sqlite" });
@@ -226,11 +228,11 @@ app.delete("/api/admin/:collection/:id", authRequired, (req, res) => {
 });
 
 app.get("/admin", (_req, res) => {
-  res.sendFile(path.join(process.cwd(), "admin.html"));
+  res.sendFile(path.join(__dirname, "admin.html"));
 });
 
 app.get("/project", (_req, res) => {
-  res.sendFile(path.join(process.cwd(), "project.html"));
+  res.sendFile(path.join(__dirname, "project.html"));
 });
 
 app.use((error, _req, res, _next) => {
