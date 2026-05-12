@@ -1,0 +1,158 @@
+{
+  "profile": {
+    "fullName": "Alex Morgan",
+    "brand": "AM",
+    "title": "Senior Data Analyst",
+    "heroHeadline": "I turn raw data into clear decisions",
+    "heroSubtext": "Data Analyst with 4+ years of experience in Python, SQL and BI systems. I help teams convert noisy metrics into confident strategy.",
+    "aboutSummary": "I blend analytics, product thinking and storytelling to drive measurable business outcomes.",
+    "aboutDetails": [
+      "I specialize in predictive analytics, A/B testing and executive dashboards.",
+      "My process combines technical rigor with clear communication so insights actually get used.",
+      "Outside work I enjoy hiking, chess and writing about data culture."
+    ],
+    "availability": "Available for freelance and full-time roles",
+    "location": "Tashkent, Uzbekistan",
+    "email": "alex@example.com",
+    "resumeUrl": "#"
+  },
+  "stats": [
+    {
+      "id": "stat-years",
+      "label": "Years Exp",
+      "value": "4+"
+    },
+    {
+      "id": "stat-projects",
+      "label": "Projects",
+      "value": "30+"
+    },
+    {
+      "id": "stat-value",
+      "label": "Value Delivered",
+      "value": "$2M+"
+    }
+  ],
+  "socialLinks": [
+    {
+      "id": "social-linkedin",
+      "label": "LinkedIn",
+      "url": "https://linkedin.com",
+      "placement": "about"
+    },
+    {
+      "id": "social-github",
+      "label": "GitHub",
+      "url": "https://github.com",
+      "placement": "about"
+    },
+    {
+      "id": "social-telegram",
+      "label": "Telegram",
+      "url": "https://t.me/yourusername",
+      "placement": "contact"
+    }
+  ],
+  "contactLinks": [
+    {
+      "id": "contact-email",
+      "label": "Email",
+      "url": "mailto:alex@example.com"
+    },
+    {
+      "id": "contact-linkedin",
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/alexmorgan"
+    },
+    {
+      "id": "contact-github",
+      "label": "GitHub",
+      "url": "https://github.com/alexmorgan"
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-analysis",
+      "icon": "Data",
+      "title": "Data Analysis",
+      "description": "Exploratory analysis, statistical testing and product analytics for growth decisions.",
+      "tags": ["Python", "Pandas", "NumPy", "SciPy"]
+    },
+    {
+      "id": "skill-sql",
+      "icon": "SQL",
+      "title": "SQL and Databases",
+      "description": "Complex querying, modeling and performance tuning across analytics warehouses.",
+      "tags": ["PostgreSQL", "BigQuery", "Snowflake", "dbt"]
+    },
+    {
+      "id": "skill-viz",
+      "icon": "Viz",
+      "title": "Data Visualization",
+      "description": "Executive dashboards that translate metrics into action.",
+      "tags": ["Tableau", "Power BI", "Plotly", "Looker"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-churn",
+      "title": "Customer Churn Prediction Model",
+      "category": "ml",
+      "summary": "Built an XGBoost model predicting churn 90 days in advance, reducing churn by 23%.",
+      "imageUrl": "",
+      "content": "### Background\nThis project aimed to reduce customer churn by identifying high-risk customers using historical product and behaviour data.\n\n### Approach\n- Data collection from transactional and event logs.\n- Feature engineering: recency, frequency, monetary, product usage metrics, and engagement signals.\n- Model: XGBoost with stratified CV and hyperparameter tuning.\n- Evaluation: precision/recall at business operating point and uplift analysis.\n\n### Tools\nPython, Pandas, XGBoost, scikit-learn, SQL, dbt, Tableau\n\n### Outcome\nModel reached 91% accuracy at the chosen threshold and enabled targeted retention campaigns that saved the company approximately $1.2M annually.",
+      "metrics": [
+        {
+          "label": "Accuracy",
+          "value": "91%"
+        },
+        {
+          "label": "Saved",
+          "value": "$1.2M"
+        }
+      ],
+      "stack": ["Python", "XGBoost", "SQL", "Tableau"],
+      "links": [
+        {
+          "label": "Case Study",
+          "url": "#"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": "project-dashboard",
+      "title": "Executive Sales Intelligence Dashboard",
+      "category": "viz",
+      "summary": "Designed a real-time dashboard tracking 15 KPIs for executive decision making.",
+      "imageUrl": "",
+      "content": "### Problem\nExecutives lacked a single source of truth for regional sales performance which delayed decision making.\n\n### Solution\nBuilt a near-real-time dashboard combining ETL pipelines and a semantic layer to surface 15 executive KPIs. The dashboard included drilldowns by region and SKU, anomaly detection alerts and daily executive summaries.\n\n### Tools\nTableau, PostgreSQL, dbt, Airflow, Looker\n\n### Impact\nEnabled faster corrective action; a 23% improvement in response time to regional downturns and clearer prioritization by the C-suite.",
+      "metrics": [
+        {
+          "label": "KPIs",
+          "value": "15"
+        },
+        {
+          "label": "Audience",
+          "value": "C-suite"
+        }
+      ],
+      "stack": ["Tableau", "PostgreSQL", "dbt"],
+      "links": [
+        {
+          "label": "Live",
+          "url": "#"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com"
+        }
+      ],
+      "featured": false
+    }
+  ]
+}

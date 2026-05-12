@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Data Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" id="brandLogo">AM</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="/admin" class="admin-link">Admin</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-bg-shape hero-bg-shape-a"></div>
+    <div class="hero-bg-shape hero-bg-shape-b"></div>
+    <div class="container hero-grid">
+      <div>
+        <p class="pill">Data + Strategy + Impact</p>
+        <h1 id="heroHeadline">Loading...</h1>
+        <p class="hero-sub" id="heroSubtext"></p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+        <div class="stats" id="statsList"></div>
+      </div>
+      <div class="hero-card" id="profileCard">
+        <h3 id="profileName">...</h3>
+        <p id="profileTitle">...</p>
+        <p id="profileSummary"></p>
+        <div class="hero-social" id="heroSocial"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div>
+          <h2>About</h2>
+          <p class="muted" id="aboutText"></p>
+          <div class="about-detail-list" id="aboutDetails"></div>
+        </div>
+        <div class="panel">
+          <h3>Availability</h3>
+          <p id="availabilityText"></p>
+          <h3>Location</h3>
+          <p id="locationText"></p>
+          <a id="resumeLink" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="projects-head">
+          <h2>Projects</h2>
+          <div class="filters" id="filters">
+            <button class="filter active" data-category="all">All</button>
+            <button class="filter" data-category="analytics">Analytics</button>
+            <button class="filter" data-category="ml">ML</button>
+            <button class="filter" data-category="viz">Visualization</button>
+          </div>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-wrap">
+        <div>
+          <h2>Contact</h2>
+          <p class="muted">All links and contacts are managed from admin panel.</p>
+          <div class="contact-links" id="contactLinks"></div>
+        </div>
+        <form class="panel" id="contactForm">
+          <h3>Send Message</h3>
+          <label>Name</label>
+          <input type="text" required name="name" />
+          <label>Email</label>
+          <input type="email" required name="email" />
+          <label>Message</label>
+          <textarea rows="4" required name="message"></textarea>
+          <button class="btn btn-primary" type="submit">Send</button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span id="footerName">Portfolio</span>
+      <a href="/admin">Open Admin Panel</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

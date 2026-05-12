@@ -1,0 +1,53 @@
+CREATE TABLE IF NOT EXISTS profile (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  fullName TEXT NOT NULL,
+  brand TEXT NOT NULL,
+  title TEXT NOT NULL,
+  heroHeadline TEXT NOT NULL,
+  heroSubtext TEXT NOT NULL,
+  aboutSummary TEXT NOT NULL,
+  aboutDetails TEXT NOT NULL,
+  availability TEXT NOT NULL,
+  location TEXT NOT NULL,
+  email TEXT NOT NULL,
+  resumeUrl TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS stats (
+  id TEXT PRIMARY KEY,
+  label TEXT NOT NULL,
+  value TEXT NOT NULL,
+  sortOrder INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS skills (
+  id TEXT PRIMARY KEY,
+  icon TEXT NOT NULL,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL,
+  tags TEXT NOT NULL,
+  sortOrder INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS projects (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  category TEXT NOT NULL,
+  summary TEXT NOT NULL,
+  imageUrl TEXT NOT NULL,
+  content TEXT NOT NULL,
+  metrics TEXT NOT NULL,
+  stack TEXT NOT NULL,
+  links TEXT NOT NULL,
+  featured INTEGER NOT NULL DEFAULT 0,
+  sortOrder INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS links (
+  id TEXT PRIMARY KEY,
+  kind TEXT NOT NULL,
+  label TEXT NOT NULL,
+  url TEXT NOT NULL,
+  placement TEXT NOT NULL,
+  sortOrder INTEGER NOT NULL DEFAULT 0
+);

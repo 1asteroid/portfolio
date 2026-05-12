@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <main class="admin-shell">
+    <header class="admin-top">
+      <div>
+        <h1>Portfolio Admin</h1>
+        <p>Manage profile, skills, projects, links and images.</p>
+      </div>
+      <div class="top-actions">
+        <a href="/" class="btn btn-ghost">Open Website</a>
+        <button id="logoutBtn" class="btn btn-ghost">Logout</button>
+      </div>
+    </header>
+
+    <section id="loginSection" class="panel narrow">
+      <h2>Admin Login</h2>
+      <form id="loginForm" class="grid-form">
+        <label>Username</label>
+        <input type="text" name="username" required value="admin" />
+        <label>Password</label>
+        <input type="password" name="password" required value="admin123" />
+        <button class="btn btn-primary" type="submit">Login</button>
+        <p id="loginStatus" class="status"></p>
+      </form>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <div class="grid-two">
+        <article class="panel">
+          <h2>Profile</h2>
+          <form id="profileForm" class="grid-form">
+            <label>Full Name</label><input name="fullName" required />
+            <label>Brand</label><input name="brand" required />
+            <label>Title</label><input name="title" required />
+            <label>Hero Headline</label><input name="heroHeadline" required />
+            <label>Hero Subtext</label><textarea name="heroSubtext" rows="3" required></textarea>
+            <label>About Summary</label><textarea name="aboutSummary" rows="3"></textarea>
+            <label>About Details (one per line)</label><textarea name="aboutDetails" rows="4"></textarea>
+            <label>Availability</label><input name="availability" />
+            <label>Location</label><input name="location" />
+            <label>Email</label><input name="email" />
+            <label>Resume URL</label><input name="resumeUrl" />
+            <button class="btn btn-primary" type="submit">Save Profile</button>
+            <p id="profileStatus" class="status"></p>
+          </form>
+        </article>
+
+        <article class="panel">
+          <h2>Stats</h2>
+          <form id="statsForm" class="grid-form">
+            <label>Stat 1 Label</label><input name="label1" />
+            <label>Stat 1 Value</label><input name="value1" />
+            <label>Stat 2 Label</label><input name="label2" />
+            <label>Stat 2 Value</label><input name="value2" />
+            <label>Stat 3 Label</label><input name="label3" />
+            <label>Stat 3 Value</label><input name="value3" />
+            <button class="btn btn-primary" type="submit">Save Stats</button>
+            <p id="statsStatus" class="status"></p>
+          </form>
+
+          <h2>Image Upload</h2>
+          <form id="uploadForm" class="grid-form">
+            <input type="file" id="uploadInput" accept="image/*" required />
+            <button class="btn btn-primary" type="submit">Upload Image</button>
+            <p id="uploadStatus" class="status"></p>
+          </form>
+        </article>
+      </div>
+
+      <section class="panel">
+        <h2>Skills CRUD</h2>
+        <form id="skillForm" class="inline-form">
+          <input name="id" type="hidden" />
+          <input name="icon" placeholder="Icon text" required />
+          <input name="title" placeholder="Skill title" required />
+          <input name="tags" placeholder="Tags comma separated" required />
+          <input name="description" placeholder="Description" required />
+          <button class="btn btn-primary" type="submit">Save Skill</button>
+        </form>
+        <div id="skillsTable"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Projects CRUD</h2>
+        <form id="projectForm" class="inline-form">
+          <input name="id" type="hidden" />
+          <input name="title" placeholder="Project title" required />
+          <select name="category">
+            <option value="analytics">analytics</option>
+            <option value="ml">ml</option>
+            <option value="viz">viz</option>
+          </select>
+          <input name="summary" placeholder="Summary" required />
+          <input name="imageUrl" placeholder="Image URL (/uploads/...)" />
+          <label>Content (Markdown)</label>
+          <textarea name="content" rows="6" placeholder="Write project case study / blog content in Markdown"></textarea>
+          <input name="stack" placeholder="Stack comma separated" required />
+          <input name="metrics" placeholder="Metrics label:value,label:value" />
+          <input name="links" placeholder="Links label|url,label|url" />
+          <label class="check"><input name="featured" type="checkbox" /> Featured</label>
+          <button class="btn btn-primary" type="submit">Save Project</button>
+        </form>
+        <div id="projectsTable"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Links CRUD (Social and Contact)</h2>
+        <form id="linkForm" class="inline-form">
+          <input name="id" type="hidden" />
+          <select name="kind">
+            <option value="socialLinks">socialLinks</option>
+            <option value="contactLinks">contactLinks</option>
+          </select>
+          <input name="label" placeholder="Label" required />
+          <input name="url" placeholder="URL" required />
+          <select name="placement">
+            <option value="about">about</option>
+            <option value="contact">contact</option>
+          </select>
+          <button class="btn btn-primary" type="submit">Save Link</button>
+        </form>
+        <div id="linksTable"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">AM</a>
+      <div class="nav-links"><a href="/">Home</a><a href="/admin">Admin</a></div>
+    </div>
+  </nav>
+
+  <main class="section">
+    <div class="container">
+      <article id="projectArticle" class="project-card panel">
+        <h1 id="projTitle">Loading…</h1>
+        <p id="projCategory" class="muted"></p>
+        <div id="projImage"></div>
+        <div id="projContent" class="project-body muted"></div>
+        <div id="projLinks" class="project-links"></div>
+        <p><a href="/" class="btn btn-secondary">Back to portfolio</a></p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>&copy; Portfolio</span>
+      <a href="/">Back</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    function qs(q) { return document.querySelector(q); }
+    function getParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+
+    async function init() {
+      const id = getParam('id');
+      if (!id) {
+        qs('#projTitle').textContent = 'Project not found';
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/public/site');
+        const data = await res.json();
+        const project = (data.projects || []).find(p => p.id === id);
+        if (!project) {
+          qs('#projTitle').textContent = 'Project not found';
+          return;
+        }
+
+        qs('#projTitle').textContent = project.title;
+        qs('#projCategory').textContent = project.category;
+        if (project.imageUrl) {
+          qs('#projImage').innerHTML = `<img src="${project.imageUrl}" alt="${project.title}">`;
+        }
+        
+          if (project.featured) {
+            qs('#projectArticle').classList.add('featured');
+          }
+
+        const content = project.content || project.summary || '';
+        // Render markdown to HTML; fall back to escaped text
+        try {
+          qs('#projContent').innerHTML = marked.parse(content);
+        } catch (e) {
+          qs('#projContent').textContent = content;
+        }
+
+        qs('#projLinks').innerHTML = (project.links || []).map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.label}</a>`).join(' ');
+      } catch (err) {
+        qs('#projTitle').textContent = 'Failed to load project';
+        console.error(err);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
